@@ -1,0 +1,67 @@
+// Feel free to use SOQL Building(by flipping the page)
+// to observe what's the correct Object name and fields names 
+
+// Get All the Profiles Id, Name fields 
+// if the profile name is 
+// System Administator, Standard User , Standard Platform User
+
+
+// Get All the Roles , Id, Name From Role Standard Object SELECT 
+//Get All the RecordTipe,Id,Name Feom ReordTipe Standard Object
+//Get all the Group Id NAme Group Standard Object
+//This is where all public groups, queues stored SELECT
+
+
+
+//SELECT Id, Name
+//FROM Profile
+//WHERE Name IN ('System Administrator', 'Standard User' , 'Standard Platform User')
+
+//SELECT Id, Name, DeveloperName
+//FROM UserRole
+//SELECT Id, Author__c,Price__c,Year__c,Description__c
+//FROM Book__c
+//WHERE Description__c !=NULL
+//OR Price__c !=NULL
+//How to get all the fiels
+//FIELDS (ALL),FIELD(STANDARD),FIELD(CUSTOM)
+//Only if you use Limit 200 or Less at the end
+//SELECT FIELD(ALL)
+//FROM Book__c
+//PARTIAL CONDITION , OR FUZZY SEARCH
+
+//RELATIONAL OPERATOR : > >= < <= != IN NOT IN
+
+//LIKE , % ( WILD CARD, it can represent 0 or more characters )
+//Get all contacts First Name and LastName
+//if FirstName starts with letter A
+
+//SELECT FirstName, LastName
+ //FROM Contact
+ //WHERE FirstName LIKE 'jO%'
+// Get all contacts First Name and LastName 
+// if FirstName starts with A and Ends with Y 
+// We can use LIKE 'A%Y'  
+// it matches  Andy, Albany, Ashley, Ay, Amy
+
+//SELECT FirstName, LastName
+ //FROM Contact
+// WHERE FirstName LIKE 'A__Y'
+// Get all contacts First Name and LastName 
+// if FirstName starts with A and Ends with Y 
+// AND has exactly 4 Charcters (meaning there are 2 character in between A and Y)
+
+// We can use LIKE 'A__Y'  
+// it matches  Andy, Anny, Abcy, APZy, A12y,aXYy
+//SELECT FirstName, LastName
+// FROM Contact
+ //WHERE FirstName LIKE 'A__Y'
+ // Get All the contacts created Today
+//SELECT FirstName, LastName
+//FROM Contact 
+//WHERE CreatedDate = YESTERDAY
+//Get all the opportunity created past 2 weeks
+SELECT Name, CloseDate,StageName
+FROM Opportunity
+WHERE CloseDate = LAST_90_Days
+ORDER BY CloseDate

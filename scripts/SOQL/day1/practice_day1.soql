@@ -1,0 +1,124 @@
+// Get all FirstName, LastName, Email Fields
+//of all Contact Records in your organization
+
+//SELECT  FirstName, LastName, Email 
+//FROM Contact
+
+
+// return LastName, Company fields
+// of all Lead Records in your organization
+// SELECT LastName, Company
+// FROM Lead
+
+// return Subject, Description, Status fields
+//SELECT Subject, Description, Status
+// FROM Case
+
+
+
+
+
+//SELECT Subject, ActivityDate, WhatId
+// FROM Task
+//SELECT lastName, Account.Name
+ //FROM Contact
+
+ //Restricting the rows with condition 
+ // using WHERE Clause
+ //SELECT FirstName,LastName
+  //FROM Contact
+//SELECT 
+ // get all the accounts name, AnnualRevenue
+
+ // get all the accounts name, AnnualRevenue
+// if AnnualRevenue is between 500000 and 1000000
+
+//SELECT Name, AnnualRevenue
+  //FROM Account
+  //WHERE AnnualRevenue>=500000 AND AnnualRevenue<=1000000
+
+// Use OR to return records that meet one of two conditions. 
+// get all the accounts name, AnnualRevenue
+// if AnnualRevenue is less than 5000 
+// or greater than 1000000
+
+
+//SELECT Name,AnnualRevenue
+ //FROM Account
+ //WHERE AnnualRevenue <=5000
+ //OR AnnualRevenue>=1000000
+
+ // Get All Account Name field
+// if the Name is not 
+// Dickenson PLC
+// Edge Communications
+//SELECT Name
+ // FROM Account
+ // WHERE (Name != 'Dickenson PLC ' AND Name != 'Edge Communications')
+ //AND AnnualRevenue != null
+// Get All Account Name , AnnualRevenue field
+// if the Name is in
+// Dickenson plc 
+// Edge Communications
+// United Oil & Gas Corp.
+
+//SELECT  Name,AnnualRevenue
+//FROM Account
+//WHERE Name = 'Dickenson PLC'
+//OR Name = 'Edge Communications'
+//OR Name = 'United Oil & Gas Corp.'
+
+
+// Above query can be better using IN operator
+// Just like switch statement in Apex,
+// if we are checking multiple possible value for same variable|field
+// IN (val1, val2, val3,..)
+// Any result that match any of those options will be returned
+// Anything does not match will not return
+// in below example first 3 Name exists in records, last one does not => 3
+
+//SELECT Name, AnnualRevenue
+ //FROM Account
+// WHERE Name IN ('Dickenson PLC',
+                //'Edge Communications',
+                //'United Oil & Gas Corp.',
+                //Bla Bla Bla)
+
+// Get all opportunity Name, Amount, StageName
+// if the StageName is IN Closed Won or Closed Lost status
+
+//SELECT Name,Amount,StageName
+ //FROM opportunity
+//WHERE StageName IN ('Closed Won','Closed Lost')
+// Now what if we want to only return if stageName is not 'Closed Won','Closed Lost'
+//SELECT Name, Amount, StageName
+ //FROM Opportunity
+ //WHERE StageName NOT IN ('Closed Won','Closed Lost')
+
+ // Get All Account Name field
+// if the Name is not  
+// Dickenson plc 
+// Edge Communications
+// AnnualRevenue is not null 
+
+ //SELECT Name, AnnualRevenue
+  //FROM Account
+ // WHERE Name NOT IN ('Dickenson plc','Edge Communications')
+  //AND AnnualRevenue != null 
+ 
+ // Get All the Contact first names and the last names
+//SELECT FirstName, LastName
+ // FROM Contact
+ // ORDER BY FirstName DESC NULLS LAST
+  //LIMIT 4
+
+  //Get all Opportynity Name, Amount,StageName
+  // Order by Amount Desc . Limit the result to 3 records
+
+  //SELECT Name,Amount,stageName
+   //FROM opportunity
+   //ORDER BY Amount DESC LIMIT 3
+   SELECT Name, (SELECT Name, Email FROM Contacts)
+FROM ACCOUNT
+ORDER BY CreatedDate ASC
+

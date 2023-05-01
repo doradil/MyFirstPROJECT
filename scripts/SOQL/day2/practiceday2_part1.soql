@@ -1,0 +1,76 @@
+//Get all Contact Name and Account Name that Contact belong to
+//Filter the contact to only show contact with Account
+//SELECT Name, AccountId, Account.Name
+ //FROM Contact 
+ //WHERE AccountId != Null
+ //Get all Case Subject and Account Name that Contact belong to
+//Filter the contact to only show contact with Account
+//SELECT Subject, Account.Name
+//FROM Case 
+//WHERE AccountId != null
+// Get all the casre records Subject and Account Name
+//  that belong to Account with Name 
+// starts with United 
+//Get all opportunity Name owner name Account Name
+//From opportynity
+//SELECT Name , Price__c , Contact__r.Name
+//FROM Book__c
+//ORDER BY Contact__r.Name ASC NULLS LAST
+//SELECT Name , Price__c , Contact__r.Name
+//FROM Book__c
+//ORDER BY Price__c DESC
+//SELECT Name , Price__c , Contact__r.Name
+//FROM Book__c
+//ORDER BY Contact__r.Name DESC NULLS LAST
+
+//## Task 6:
+
+//Write a SOQL SELECT statement to retrieve
+//the Name and Role.Name fields for all User 
+//records where the Role.Name contains Sale or CEO
+
+//## Task 8:
+//Write a SOQL SELECT statement to retrieve
+//the `Subject`, `ActivityDate`, `WhoId`, `Who.Name` fields for all **Task** records 
+//where the `WhoId` not null
+//SELECT Subject,ActivityDate,WhoId,Who.Name
+ //FROM Task
+ //WHERE WhoId != Null
+
+ //## Task 9:
+//Write a SOQL SELECT statement to retrieve
+//the Subject, Contact.Name, fields for all Case records where 
+ // - the Contact.Name is not null and
+ // - Subject contains Generator
+
+// SELECT Subject,Contact.Name
+// FROM Case 
+ // WHERE contact.name!=Null
+ // and Subject Like '%Generator%'
+
+ //SELECT name,(SELECT Subject FROM /Cases where Subject Like'%Generator%')
+  //FROM Account
+ // WHERE Id IN (SELECT AccountId from //Case)
+
+//SELECT  Count(Id)
+//FROM Opportunity
+//WHERE StageName = 'Closed Lost'
+
+//SELECT StageName, COUNT(Id)
+//FROM Opportunity
+//GROUP BY StageName
+
+// if you use aggregate function with any additional field in Select line
+// it must be grouped by that field or it will not work
+// anytime you add new field other than the field in group by, it will not work
+// as long as it does not show up in group by field list
+//SELECT LeadSource,COUNT(Id)
+//FROM Lead
+//GROUP BY LeadSource
+//SELECT  Stage,COUNT(Id)
+//FROM Lead
+//GROUP BY Stage
+// Get the count of Leads of each Status 
+// only return the row if the count more than less than 5
+SELECT Status,COUNT(Id)
+FROM Lead
