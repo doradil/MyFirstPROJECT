@@ -1,23 +1,16 @@
+public  class Bird extends Animal{
 
-  /**
-   * A class extends another class
-   * A class implements another interface
-   * A class can only extends 1 other class
-   * A class can implements a interface
-   * It will be required to implement the
-   * of all the abstract method
-   */
-  public class Bird implements Flyable {
 
-    /**
-     * fly method that provide implementation
-     * for abstract fly()method from
-     * Flyable interface
-     */
-    public void fly() {
-      System.debug('Bird fly with the wing');
+    public Bird(String name, String breed, Integer age, String size) {
+        super(name, breed, age, size);
     }
-    public Integer flyLongRange(){
-        return 100;
-    }
-  }
+    public void fly(){
+        System.debug(name+'is flying');
+}
+public void chirp(){
+    System.debug(name+'is chirping');
+}
+public void peck(){
+    System.debug(name+'is pecking');
+}
+}

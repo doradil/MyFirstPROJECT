@@ -17,28 +17,7 @@ trigger OppUpdateTrigger on Opportunity (after update) {
      * else it means it's running for the first time execute the code
      */
 
-   
-
     
-       OppsTriggerHandler.handleAfterUpdate(Trigger.new);
-          // In after update event, Trigger prevent updating anything
-       // inside Trigger.new directly 
-       // below line will make a copy of opp entered the trigger
-       // and we can update the cloned one
-       Opportunity oppNew = each.clone(true);
+     OppsTriggerHandler.handleAfterUpdate(Trigger.new);
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

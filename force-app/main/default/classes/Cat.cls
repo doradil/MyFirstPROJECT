@@ -1,23 +1,15 @@
 public class Cat extends Animal {
-    
-    // field : color 
-    public String color ; 
+  public Cat(String name, String breed, Integer age, String size) {
+    super(name, breed, age, size);
+  }
 
-    // constructor to set 3 fields value 
-    public Cat(String name, Integer age, String color) {
-        super(name, age); 
-        this.color = color ; 
-    }
-
-    // override makeNoise
-    public override void makeNoise(){
-        System.debug('Cat is yelling Meow!!!'); 
-        
-    }
-    // override getInfo
-    public override String getInfo(String food){
-        return 'Cat ' + this.name + ' is eating ' + food ; 
-    }
-
-
+  public void meow() {
+    System.debug(name + 'is meowing');
+  }
+  public void scratch() {
+    System.debug(name + 'is scratching');
+  }
+  public void sleep() {
+    System.debug(name + 'is sleep');
+  }
 }

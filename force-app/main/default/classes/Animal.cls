@@ -1,20 +1,29 @@
-public abstract class Animal {
-    
-    // instance fields name, age
-    public String name; 
-    public Integer age; 
-    // constructor to set those 2 fields 
-    public Animal(String name, Integer age){
-        this.name = name ; 
-        this.age = age ; 
-    }
+public virtual class Animal {
+   
+public String name ; 
+public String breed;
+public Integer age;
+public String size;
 
-    // abstract void method called makeNoise 
-    public abstract void makeNoise(); 
+public Animal( String name,
+ String breed,
+ Integer age,
+ String size
+){
+    this.name=name;
+    this.breed=breed;
+    this.age=age;
+    this.size=size;
 
-    // abstract method called getInfo  
-    // it has param as food
-    // return String
-    public abstract String getInfo(String food) ;  
+}
+
+public void eat(){
+    System.debug(name +'is eating');
     
+}
+public void move(){
+    System.debug(name + 'is moving');
+    
+}
+   
 }

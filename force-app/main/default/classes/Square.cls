@@ -17,14 +17,10 @@ public class Square extends Rectangle{
 
   public Square(String name, Decimal side) {
       // using Square constructor to 
-      //super(name, side, side);
-      this.name=name;
-      this.width=side;
-      this.height=side;
-     // this.side = side ; 
+      super(name, side, side);
+      this.side = side ; 
   }
 
   //public override void draw(){
     //  System.debug('Drawing awesome Square'); 
   }
-

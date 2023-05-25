@@ -80,15 +80,4 @@ public class Helper {
         return filteredList ; 
 
     }
-    
 }
-//public class StringArrayTest {
-    //public static List<String> generateStringArray(Integer n){
-        //['Test 0', 'Test 1', 'Test 2'........]
-       // List<String>strList=new List<String>();
-        //for(Integer i=0; i<n; i++){
-          //  strList.add('Test ' + i);
-       // }
-       // return strList;
-   // }
-//}

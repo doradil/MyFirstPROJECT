@@ -1,5 +1,4 @@
-
-  public class TestDataFactory {
+public class TestDataFactory {
     /**
      * Create a list of case records for testing purposes.
      * @param numCases The number of cases to create
@@ -17,4 +16,3 @@
       return caseList;
     }
   }
-

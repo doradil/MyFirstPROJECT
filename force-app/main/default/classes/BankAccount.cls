@@ -1,4 +1,4 @@
-   // private fields are not accessible outside the class
+// private fields are not accessible outside the class
     // in order to make it available for Test 
     // we can use @TestVisible annotation 
    

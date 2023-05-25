@@ -1,15 +1,4 @@
-//public virtual class Car {
-    /**
-     * Abstract keyword used on the class with mark the class as abstract class
-     * It can not be instantiated meaning you can not directly create Car object
-     * using new keyword
-     * Abstract Class meant to parent class that extended by Child classes
-     * Abstract methoddoes not have a body (mining no{}at all)
-     * abstract method must be overridden in the child or it will not complated
-     */
-    public abstract class Car {
-        
-    
+public virtual class Car {
 
   public String model ; 
   public Decimal price ; 
@@ -40,7 +29,5 @@
       System.debug('Car '+ this.model + ' is driving'); 
       
   }
-
-  public abstract void drive();
 
 }

@@ -1,6 +1,4 @@
-
-//with sharing will enforce record 
-public with sharing class AccountController {
+public without sharing class AccountController {
 
 /**
  * Create a static method called getAllAccount
@@ -8,7 +6,7 @@ public with sharing class AccountController {
  * 
  */
 public static List<Account>getAllAccounts(){
-    return[SELECT Name, AnnualRevenue FROM Account SECURITY_ENFORCE];
+    return[SELECT Name, AnnualRevenue FROM Account];
 }
     
    /**

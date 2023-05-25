@@ -28,6 +28,4 @@ public class LocalStudent extends Student {
         this.seatId  = seatId ; 
         
     }
-
-    
 }

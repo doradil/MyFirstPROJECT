@@ -52,7 +52,6 @@ private class CreateChildCaseHandlerTest {
       FROM Case
       WHERE ParentId IN :newCases
     ];
-    
     // check the childcases size is 0
     Assert.areEqual(0, newChildCases.size());
   }
